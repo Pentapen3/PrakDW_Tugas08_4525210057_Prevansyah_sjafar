@@ -32,7 +32,7 @@ Proyek ini adalah form pendaftaran seminar yang dibuat dengan HTML dan CSS. Form
 Pengujian dilakukan dengan mengisi form lalu menekan tombol **Kirim pendaftaran**. Kolom *Hasil aktual* diisi setelah form diuji di browser.
 
 | No | Field | Input uji | Hasil | 
-|---|---|---|---|---|
+|---|---|---|---|
 | 1 | Nama lengkap | `Al` (2 karakter) | Ditolak browser karena kurang dari `minlength` 3 | 
 | 2 | NIM | `12345#` | Ditolak karena tidak sesuai `pattern` (ada simbol) | 
 | 3 | NIM | `123456789` (9 digit) | Ditolak karena kurang dari 10 digit |
