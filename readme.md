@@ -53,6 +53,8 @@ contoh output di tampilan dekstop
 ![hasiloutput](img/output3.png)
 
 contoh output di tampilan Mobile 
+
+
 ![hasiloutput](img/outputmobile.png)
 
 
