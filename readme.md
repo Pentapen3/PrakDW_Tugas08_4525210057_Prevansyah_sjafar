@@ -31,15 +31,15 @@ Proyek ini adalah form pendaftaran seminar yang dibuat dengan HTML dan CSS. Form
 
 Pengujian dilakukan dengan mengisi form lalu menekan tombol **Kirim pendaftaran**. Kolom *Hasil aktual* diisi setelah form diuji di browser.
 
-| No | Field | Input uji | Hasil yang diharapkan | Hasil aktual |
+| No | Field | Input uji | Hasil | 
 |---|---|---|---|---|
-| 1 | Nama lengkap | `Al` (2 karakter) | Ditolak browser karena kurang dari `minlength` 3 | |
-| 2 | NIM | `12345#` | Ditolak karena tidak sesuai `pattern` (ada simbol) | |
-| 3 | NIM | `123456789` (9 digit) | Ditolak karena kurang dari 10 digit | |
-| 4 | Email | `prevan.gmail.com` (tanpa `@`) | Ditolak karena format email tidak valid | |
-| 5 | Jumlah tiket | `6` | Ditolak karena melebihi `max` 5 | |
-| 6 | Alasan mengikuti kegiatan | `Ingin belajar` (13 karakter) | Ditolak karena kurang dari `minlength` 20 | |
-| 7 | Upload CV | File `.jpg` (dipilih lewat opsi "All files") | Browser bisa saja menerima karena `accept` hanya saran, sehingga pengecekan tipe file harus dilakukan di server | |
+| 1 | Nama lengkap | `Al` (2 karakter) | Ditolak browser karena kurang dari `minlength` 3 | 
+| 2 | NIM | `12345#` | Ditolak karena tidak sesuai `pattern` (ada simbol) | 
+| 3 | NIM | `123456789` (9 digit) | Ditolak karena kurang dari 10 digit |
+| 4 | Email | `prevan.gmail.com` (tanpa `@`) | Ditolak karena format email tidak valid | 
+| 5 | Jumlah tiket | `6` | Ditolak karena melebihi `max` 5 | 
+| 6 | Alasan mengikuti kegiatan | `Ingin belajar` (13 karakter) | Ditolak karena kurang dari `minlength` 20 |
+| 7 | Upload CV | File `.jpg` (dipilih lewat opsi "All files") | Browser bisa saja menerima karena `accept` hanya saran, sehingga pengecekan tipe file harus dilakukan di server |
 
 ## Validasi yang tetap wajib di server
 
@@ -48,11 +48,11 @@ Validasi HTML5 hanya berjalan di browser dan bisa dilewati, misalnya lewat DevTo
 ## Hasil Output
 
 contoh output di tampilan dekstop 
-![hasiloutput](img\output1.png)
-![hasiloutput](img\output2.png)
-![hasiloutput](img\output3.png)
+![hasiloutput](img/output1.png)
+![hasiloutput](img/output2.png)
+![hasiloutput](img/output3.png)
 
 contoh output di tampilan Mobile 
-![hasiloutput](img\outputmobile.png)
+![hasiloutput](img/outputmobile.png)
 
 
