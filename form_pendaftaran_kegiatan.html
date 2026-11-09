@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Form Pendaftaran Kegiatan – Desain Web Pertemuan 8</title>
+<link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+<main>
+  <h1>Pendaftaran Seminar Web Development</h1>
+  <p class="lead">Isi data di bawah ini untuk mendaftar. Kolom bertanda <span class="req">*</span> wajib diisi.</p>
+
+  <!-- enctype multipart/form-data wajib karena ada upload file -->
+  <form action="/daftar-kegiatan" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="sumber" value="halaman-pendaftaran">
+
+    <fieldset>
+      <legend>Data peserta</legend>
+
+      <div class="field">
+        <label for="nama">Nama lengkap <span class="req">*</span></label>
+        <input type="text" id="nama" name="nama" required minlength="3" maxlength="60" autocomplete="name" placeholder="Contoh: Prevansyah Sjafar">
+        <span class="hint">3–60 karakter.</span>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="nim">NIM <span class="req">*</span></label>
+          <input type="text" id="nim" name="nim" required pattern="[0-9]{10}" minlength="10" maxlength="10" inputmode="numeric" placeholder="Contoh: 4525210057">
+          <span class="hint">Tepat 10 digit angka.</span>
+        </div>
+        <div class="field">
+          <label for="tanggal_lahir">Tanggal lahir <span class="req">*</span></label>
+          <input type="date" id="tanggal_lahir" name="tanggal_lahir" required max="2010-12-31">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="contoh@gmail.com">
+        </div>
+        <div class="field">
+          <label for="telepon">Nomor telepon</label>
+          <input type="tel" id="telepon" name="telepon" inputmode="tel" autocomplete="tel" pattern="[0-9]{9,15}" placeholder="081271291234">
+          <span class="hint">Opsional, 9–15 digit angka.</span>
+        </div>
+      </div>
+
+      
+      <div class="field">
+        <span class="group-label" id="jk-label">Jenis kelamin <span class="req">*</span></span>
+        <div role="radiogroup" aria-labelledby="jk-label">
+          <label class="choice"><input type="radio" name="jenis_kelamin" value="L" required> Laki-laki</label>
+          <label class="choice"><input type="radio" name="jenis_kelamin" value="P"> Perempuan</label>
+        </div>
+      </div>
+
+      
+      <div class="field">
+        <span class="group-label" id="jp-label">Jenis peserta <span class="req">*</span></span>
+        <div role="radiogroup" aria-labelledby="jp-label">
+          <label class="choice"><input type="radio" name="jenis_peserta" value="mahasiswa" required> Mahasiswa</label>
+          <label class="choice"><input type="radio" name="jenis_peserta" value="umum"> Umum</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Detail kegiatan</legend>
+
+      <div class="row">
+        
+        <div class="field">
+          <label for="prodi">Program studi <span class="req">*</span></label>
+          <select id="prodi" name="prodi" required>
+            <option value="">-- Pilih program studi --</option>
+            <option value="ti">Teknik Informatika</option>
+            <option value="si">Sistem Informasi</option>
+            <option value="mi">Manajemen Informatika</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="jumlah_tiket">Jumlah tiket <span class="req">*</span></label>
+          <input type="number" id="jumlah_tiket" name="jumlah_tiket" required min="1" max="5" step="1" value="1">
+          <span class="hint">Maksimal 5 tiket per pendaftaran.</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="website">Website / portofolio</label>
+        <input type="url" id="website" name="website" placeholder="https://contoh.id">
+      </div>
+
+      
+      <div class="field">
+        <span class="group-label" id="minat-label">Topik yang diminati</span>
+        <div role="group" aria-labelledby="minat-label">
+          <label class="choice"><input type="checkbox" name="minat[]" value="html"> HTML</label>
+          <label class="choice"><input type="checkbox" name="minat[]" value="css"> CSS</label>
+          <label class="choice"><input type="checkbox" name="minat[]" value="js"> JavaScript</label>
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="field">
+          <label for="cv">Upload CV <span class="req">*</span></label>
+          <input type="file" id="cv" name="cv" accept=".pdf" required>
+          <span class="hint">Format PDF.</span>
+        </div>
+        <div class="field">
+          <label for="portofolio">Upload portofolio</label>
+          <input type="file" id="portofolio" name="portofolio" accept=".pdf,.png,.jpg,.jpeg">
+          <span class="hint">Opsional. PDF, PNG, atau JPG.</span>
+        </div>
+      </div>
+
+      
+      <div class="field">
+        <label for="alasan">Alasan mengikuti kegiatan <span class="req">*</span></label>
+        <textarea id="alasan" name="alasan" rows="5" required minlength="20" maxlength="300" placeholder="Tuliskan alasan Anda..."></textarea>
+        <span class="hint">Minimal 20 karakter, maksimal 300 karakter.</span>
+      </div>
+
+      <div class="field">
+        <label class="choice"><input type="checkbox" name="setuju" value="ya" required> Saya menyatakan data di atas benar. <span class="req">*</span></label>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button type="submit">Kirim pendaftaran</button>
+      <button type="reset">Kosongkan form</button>
+    </div>
+  </form>
+
+</main>
+</body>
+</html>
